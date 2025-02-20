@@ -10,6 +10,5 @@ REM_DAYS=7
 echo Assignment: 
 echo Days remaining to submit: days
 echo -------------------------------------------
-
 check_submissions 
 

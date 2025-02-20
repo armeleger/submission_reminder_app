@@ -71,7 +71,6 @@ REM_DAYS="${REM_DAYS:-7}"
 echo "Assignment: $ASSIGNMENT"
 echo "Days remaining to submit: $REM_DAYS days"
 echo "-------------------------------------------"
-
 check_submissions "$submissions_file"
 " >"$home_dir/app/reminder.sh"
 
