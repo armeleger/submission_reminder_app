@@ -6,7 +6,6 @@ if [[ -z "$username" ]]; then
 	echo "ERROR: Username cannot be empty."
 fi
 home_dir="submission_reminder_${username}"
-echo "Succefully created ${username}'s directory"
 
 #creating user's subdirectories
 
@@ -55,7 +54,7 @@ function check_submissions {
             echo "Reminder: $student has not submitted the $ASSIGNMENT assignment!"
         fi
     done < <(tail -n +2 "$submissions_file") # Skip the header
-}">"$home_dir/modules/functions.s"
+}">"$home_dir/modules/functions.sh"
 
 
 #reminder.sh file
@@ -85,4 +84,8 @@ echo "
 Successfully Created ${username}'s Directory
 -----------------------------------------------
 "
+#changing permissions
 
+chmod +x "$home_dir/modules/functions.sh"
+chmod +x "$home_dir/startup.sh"
+chmod +x "$home_dir/app/reminder.sh"

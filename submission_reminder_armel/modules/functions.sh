@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Function to read submissions file and output students who have not submitted
 function check_submissions {
     local submissions_file=
@@ -18,4 +17,3 @@ function check_submissions {
         fi
     done < <(tail -n +2 ) # Skip the header
 }
-
