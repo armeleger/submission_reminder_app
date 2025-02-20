@@ -54,7 +54,8 @@ function check_submissions {
             echo "Reminder: $student has not submitted the $ASSIGNMENT assignment!"
         fi
     done < <(tail -n +2 "$submissions_file") # Skip the header
-}">"$home_dir/modules/functions.sh"
+}
+">"$home_dir/modules/functions.sh"
 
 
 #reminder.sh file
@@ -64,11 +65,14 @@ source ./config/config.env
 source ./modules/functions.sh
 # Path to the submissions file
 submissions_file="./assets/submissions.txt"
-#Print remaining time and run the reminder function
+ASSIGNMENT="${ASSIGNMENT:-Shell Navigation}"
+REM_DAYS="${REM_DAYS:-7}"
+# Print remaining time and run the reminder function
 echo "Assignment: $ASSIGNMENT"
-echo "Days remaining to submit: $DAYS_REMAINING days"
+echo "Days remaining to submit: $REM_DAYS days"
 echo "-------------------------------------------"
-check_submissions$submissions_file
+
+check_submissions "$submissions_file"
 " >"$home_dir/app/reminder.sh"
 
 

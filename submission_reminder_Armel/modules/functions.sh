@@ -17,3 +17,4 @@ function check_submissions {
         fi
     done < <(tail -n +2 ) # Skip the header
 }
+
