@@ -16,12 +16,15 @@ mkdir -p "$home_dir/config"
 
 
 #config.env file
-cat << "EOF" > "$home_dir/assets/submissions.txt" 
+cat << "EOF" > "$home_dir/config/config.env"
 # This is the config file
-export ASSIGNMENT="Shell Navigation"
-export DAYS_REMAINING=2" > "$home_dir/config/config.env"
-#submissions.txt file
-echo "student, assignment, submission status
+ASSIGNMENT="Shell Navigation"
+DAYS_REMAINING=2
+EOF
+
+#submissions file file
+cat << "EOF" > "$home_dir/assets/submissions.txt" 
+student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
 Divine, Shell Navigation, not submitted
@@ -59,7 +62,7 @@ EOF
 
 
 #reminder.sh file
-cat << "EOF" > "$home_dir/startup.sh" 
+cat << "EOF" > "$home_dir/app/reminder.sh" 
 #!/bin/bash
 #!/bin/bash
 # Source environment variables and helper functions
