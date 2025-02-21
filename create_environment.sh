@@ -65,7 +65,7 @@ source ./config/config.env
 source ./modules/functions.sh
 # Path to the submissions file
 submissions_file="./assets/submissions.txt"
-ASSIGNMENT="${ASSIGNMENT:-Shell Navigation}"
+ASSIGNMENT="${ASSIGNMENT:-"Shell Navigation"}"
 REM_DAYS="${REM_DAYS:-7}"
 # Print remaining time and run the reminder function
 echo "Assignment: $ASSIGNMENT"
