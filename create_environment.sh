@@ -60,23 +60,20 @@ function check_submissions {
 
 
 #reminder.sh file
-echo "#!/bin/bash
+echo " 
 #!/bin/bash
-
+#!/bin/bash
 # Source environment variables and helper functions
 source ./config/config.env
 source ./modules/functions.sh
-
 # Path to the submissions file
 submissions_file="./assets/submissions.txt"
-
 # Print remaining time and run the reminder function
 echo "Assignment: $ASSIGNMENT"
 echo "Days remaining to submit: $DAYS_REMAINING days"
 echo "--------------------------------------------"
-
 check_submissions $submissions_file
-" >"$home_dir/app/reminder.sh"
+" > "$home_dir/app/reminder.sh"
 
 
 #startup file
@@ -94,5 +91,5 @@ Successfully Created ${username}'s Directory
 #changing permissions
 
 chmod +x "$home_dir/modules/functions.sh"
-chmod +x "$home_dir/startup.sh"
 chmod +x "$home_dir/app/reminder.sh"
+chmod +x "$home_dir/startup.sh"
