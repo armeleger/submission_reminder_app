@@ -16,11 +16,10 @@ mkdir -p "$home_dir/config"
 
 
 #config.env file
-echo "# This is the config file
+cat << "EOF" > "$home_dir/assets/submissions.txt" 
+# This is the config file
 export ASSIGNMENT="Shell Navigation"
-export DAYS_REMAINING=2" >"$home_dir/config/config.env"
-
-
+export DAYS_REMAINING=2" > "$home_dir/config/config.env"
 #submissions.txt file
 echo "student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
@@ -32,12 +31,12 @@ Arnold, Git, Submitted
 Tito, Shell Navigation, not submitted
 Seth, Shell Navigation, submitted
 Elvis, Git, not submitted
-" >"$home_dir/assets/submissions.txt"
+EOF
 
 
 #function.sh file
-echo "#!/bin/bash
-
+cat << "EOF" > "$home_dir/modules/functions.sh"
+"#!/bin/bash
 # Function to read submissions file and output students who have not submitted
 function check_submissions {
     local submissions_file=$1
@@ -56,11 +55,11 @@ function check_submissions {
         fi
     done < <(tail -n +2 "$submissions_file") # Skip the header
 }
-">"$home_dir/modules/functions.sh"
+EOF
 
 
 #reminder.sh file
-echo " 
+cat << "EOF" > "$home_dir/startup.sh" 
 #!/bin/bash
 #!/bin/bash
 # Source environment variables and helper functions
@@ -73,13 +72,15 @@ echo "Assignment: $ASSIGNMENT"
 echo "Days remaining to submit: $DAYS_REMAINING days"
 echo "--------------------------------------------"
 check_submissions $submissions_file
-" > "$home_dir/app/reminder.sh"
+EOF
 
 
 #startup file
-echo "#!/bin/bash
+cat << "EOF" > "$home_dir/startup.sh"
+"#!/bin/bash
 echo "Starting up the app"
-./app/reminder.sh" > "$home_dir/startup.sh"
+./app/reminder.sh"
+EOF
 
 
 #User's Message
@@ -88,8 +89,9 @@ echo "
 Successfully Created ${username}'s Directory
 -----------------------------------------------
 "
+
 #changing permissions
 
 chmod +x "$home_dir/modules/functions.sh"
-chmod +x "$home_dir/app/reminder.sh"
 chmod +x "$home_dir/startup.sh"
+chmod +x "$home_dir/app/reminder.sh"
