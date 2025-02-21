@@ -36,7 +36,7 @@ EOF
 
 #function.sh file
 cat << "EOF" > "$home_dir/modules/functions.sh"
-"#!/bin/bash
+#!/bin/bash
 # Function to read submissions file and output students who have not submitted
 function check_submissions {
     local submissions_file=$1
@@ -77,9 +77,8 @@ EOF
 
 #startup file
 cat << "EOF" > "$home_dir/startup.sh"
-"#!/bin/bash
-echo "Starting up the app"
-./app/reminder.sh"
+#!/bin/bash
+./app/reminder.sh
 EOF
 
 
