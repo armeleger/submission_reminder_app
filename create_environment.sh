@@ -37,6 +37,7 @@ Elvis, Git, not submitted
 
 #function.sh file
 echo "#!/bin/bash
+
 # Function to read submissions file and output students who have not submitted
 function check_submissions {
     local submissions_file=$1
@@ -60,18 +61,21 @@ function check_submissions {
 
 #reminder.sh file
 echo "#!/bin/bash
+#!/bin/bash
+
 # Source environment variables and helper functions
 source ./config/config.env
 source ./modules/functions.sh
+
 # Path to the submissions file
 submissions_file="./assets/submissions.txt"
-ASSIGNMENT="${ASSIGNMENT:-"Shell Navigation"}"
-REM_DAYS="${REM_DAYS:-7}"
+
 # Print remaining time and run the reminder function
 echo "Assignment: $ASSIGNMENT"
-echo "Days remaining to submit: $REM_DAYS days"
-echo "-------------------------------------------"
-check_submissions "$submissions_file"
+echo "Days remaining to submit: $DAYS_REMAINING days"
+echo "--------------------------------------------"
+
+check_submissions $submissions_file
 " >"$home_dir/app/reminder.sh"
 
 
